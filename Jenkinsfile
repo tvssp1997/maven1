@@ -13,7 +13,7 @@ pipeline{
         }
         stage("Upload Artifact to Nexus"){
             steps{
-                sh "nexusArtifactUploader artifacts: [[artifactId: 'firstapp', classifier: '', file: 'webapp/target/firstapp-1.0-SNAPSHOT.war', type: 'war']], credentialsId: '6bc4538b-3c4f-4ae9-bce7-eeaf36e10427', groupId: 'practice', nexusUrl: '172.31.5.66', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://13.233.126.121:8081/repository/firstapp', version: '1.0.0' "
+                sh "nexusArtifactUploader artifacts: [[artifactId: 'firstapp', classifier: '', file: 'webapp/target/firstapp-1.0-SNAPSHOT.war', type: 'war']], credentialsId: '6bc4538b-3c4f-4ae9-bce7-eeaf36e10427', groupId: 'practice', nexusUrl: '172.31.5.66:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'firstapp', version: '1.0.0' "
             }
         }
     }
