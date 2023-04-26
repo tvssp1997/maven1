@@ -8,7 +8,8 @@ pipeline{
         }
         stage("Continuous Build"){
             steps{
-                sh 'mvn clean package'
+				sh 'pwd'
+                sh 'mvn package'
             }
         }
         stage("Upload Artifact to Nexus"){
